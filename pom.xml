@@ -10,6 +10,13 @@
     <name>${project.artifactId}</name>
     <description>Spring Boot / JavaFX integration</description>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.3.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+
     <properties>
         <guava.version>20.0</guava.version>
         <commons-lang3.version>3.5</commons-lang3.version>
@@ -50,6 +57,11 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
