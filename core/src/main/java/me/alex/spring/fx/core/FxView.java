@@ -7,14 +7,17 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.AbstractFactoryBean;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 import org.springframework.util.ClassUtils;
 
 import java.nio.charset.StandardCharsets;
 
 /**
+ * FXML view bean factory.
+ * <p>
  * Created by Alex.Sun on 1/11/17.
  */
-public class FxViewSupport extends AbstractFactoryBean<Parent> {
+public class FxView extends AbstractFactoryBean<Parent> {
 
     private String fxmlPrefix = "/fxml/";
     private String fxmlSuffix = ".fxml";
@@ -26,10 +29,12 @@ public class FxViewSupport extends AbstractFactoryBean<Parent> {
 
     private ClassPathResource fxmlResource;
 
+    protected FxController meta = AnnotationUtils.findAnnotation(getClass(), FxController.class);
+
     /**
      * obtain the view root.
      */
-    public Parent getViewRoot() {
+    public Parent getView() {
         try {
             return getObject();
         } catch (Exception e) {
@@ -70,7 +75,7 @@ public class FxViewSupport extends AbstractFactoryBean<Parent> {
     }
 
     protected ClassPathResource createFxmlResource() {
-        String path = AnnotationUtils.findAnnotation(getClass(), FxController.class).fxml();
+        String path = meta.fxml();
         if (StringUtils.isEmpty(path)) {
             path = StringUtils.removeEnd(getClass().getSimpleName(), controllerSuffix);
         }
@@ -90,6 +95,5 @@ public class FxViewSupport extends AbstractFactoryBean<Parent> {
     public void setControllerSuffix(String controllerSuffix) {
         this.controllerSuffix = controllerSuffix;
     }
-
 
 }
