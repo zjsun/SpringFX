@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * Created by Alex.Sun on 1/12/17.
  */
-@FxController("NewWin")
+@FxController("NewWindow")
 public class NewWin extends FxControllerSupport {
 
     @Autowired
