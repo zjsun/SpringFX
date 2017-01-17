@@ -18,6 +18,7 @@
     </parent>
 
     <properties>
+        <controlsfx.version>8.40.12</controlsfx.version>
         <guava.version>20.0</guava.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <lombok.version>1.16.10</lombok.version>
@@ -30,6 +31,12 @@
                 <groupId>me.alex</groupId>
                 <artifactId>springfx-core</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.controlsfx</groupId>
+                <artifactId>controlsfx</artifactId>
+                <version>${controlsfx.version}</version>
             </dependency>
 
             <dependency>
