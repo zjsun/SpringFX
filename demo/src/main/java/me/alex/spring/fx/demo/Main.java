@@ -4,13 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import me.alex.spring.fx.core.FxController;
 import me.alex.spring.fx.core.FxControllerSupport;
+import me.alex.spring.fx.core.FxUtils;
+import org.controlsfx.glyphfont.FontAwesome;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,7 +35,8 @@ public class Main extends FxControllerSupport implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        FxUtils.useIcon(btn01, FontAwesome.Glyph.FOLDER_OPEN, ContentDisplay.LEFT);
+        FxUtils.useIcon(btn02, FontAwesome.Glyph.CLOSE, ContentDisplay.LEFT);
     }
 
     @Override

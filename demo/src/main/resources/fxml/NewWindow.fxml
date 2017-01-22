@@ -3,9 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.alex.spring.fx.demo.NewWin">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.alex.spring.fx.demo.NewWin">
    <children>
-      <Button layoutX="119.0" layoutY="109.0" mnemonicParsing="false" onAction="#onClose" text="Close this" />
-      <Button layoutX="269.0" layoutY="109.0" mnemonicParsing="false" onAction="#onCloseParent" text="Close parent" />
+      <Button fx:id="btn01" layoutX="71.0" layoutY="29.0" mnemonicParsing="false" onAction="#onClose" text="Close this" />
+      <Button fx:id="btn02" layoutX="71.0" layoutY="100.0" mnemonicParsing="false" onAction="#onCloseParent" text="Close parent" />
    </children>
 </Pane>
