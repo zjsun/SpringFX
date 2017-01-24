@@ -10,6 +10,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * Created by Alex.Sun on 1/11/17.
  */
 public class FxApplication extends Application {
+    public static FxApplication INSTANCE = null;//todo:
     private static String[] appArgs = ArrayUtils.EMPTY_STRING_ARRAY;
 
     private ConfigurableApplicationContext appContext;
@@ -17,6 +18,7 @@ public class FxApplication extends Application {
     @Override
     public void init() throws Exception {
         super.init();
+        INSTANCE = this;
         this.appContext = SpringApplication.run(getClass(), appArgs);
     }
 

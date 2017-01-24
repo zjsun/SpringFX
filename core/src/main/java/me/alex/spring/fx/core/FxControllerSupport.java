@@ -50,7 +50,6 @@ public class FxControllerSupport extends FxView implements ApplicationListener<F
         stage.setScene(getScene());
     }
 
-    //    @EventListener
     public void onFxStart(FxStartEvent event) {
         this.primaryStage = event.getPrimaryStage();
         if (meta.main()) {
