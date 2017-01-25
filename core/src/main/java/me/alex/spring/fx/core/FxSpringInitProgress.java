@@ -5,28 +5,28 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
 /**
  * Spring context initialize progress notification.
  * <p>
  * Created by Alex.Sun on 1/24/17.
  */
-@Component
-@Order(Ordered.HIGHEST_PRECEDENCE)
-public class SpringInitProgress implements Preloader.PreloaderNotification, BeanPostProcessor, ApplicationContextAware {
+public class FxSpringInitProgress implements BeanPostProcessor, ApplicationContextAware, Preloader.PreloaderNotification {
 
     private int count;
     private int step;
     private String details;
+    private FxApplication fxApplication;
+
+    public FxSpringInitProgress(FxApplication fxApplication) {
+        this.fxApplication = fxApplication;
+    }
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         step++;
         details = beanName;
-        FxApplication.INSTANCE.notifyPreloader(this);
+        fxApplication.notifyPreloader(this);
         return bean;
     }
 
@@ -38,7 +38,7 @@ public class SpringInitProgress implements Preloader.PreloaderNotification, Bean
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.count = applicationContext.getBeanDefinitionCount();
-        this.step = 0;
+        this.step = 1;
     }
 
     public double getProgress() {

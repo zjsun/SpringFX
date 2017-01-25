@@ -2,17 +2,20 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.alex.spring.fx.demo.Splash">
    <children>
-      <Label layoutX="104.0" layoutY="99.0" text="Product Name">
+      <Label layoutX="104.0" layoutY="99.0" text="Product Name" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0">
          <font>
-            <Font size="18.0" />
+            <Font size="36.0" />
          </font>
       </Label>
-      <ProgressBar fx:id="progressBar" layoutX="81.0" layoutY="301.0" prefHeight="20.0" prefWidth="396.0" progress="0.0" />
+      <ProgressBar fx:id="progressBar" layoutX="81.0" layoutY="301.0" prefHeight="20.0" prefWidth="396.0" progress="0.1" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Label fx:id="lbDetails" layoutX="81.0" layoutY="329.0" text="Loading..." AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Label layoutX="430.0" layoutY="362.0" text="copyright" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+      <ImageView fx:id="imageView" accessibleText="logo" fitHeight="60.0" fitWidth="60.0" layoutX="420.0" layoutY="30.0" pickOnBounds="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
    </children>
 </AnchorPane>

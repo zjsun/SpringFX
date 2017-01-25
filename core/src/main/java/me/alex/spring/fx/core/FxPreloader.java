@@ -43,7 +43,6 @@ public abstract class FxPreloader extends Preloader {
 
     @Override
     public void handleStateChangeNotification(StateChangeNotification info) {
-        //todo: too early to close
         if (info.getType() == StateChangeNotification.Type.BEFORE_START) {
             this.primaryStage.close();
         }
@@ -51,10 +50,10 @@ public abstract class FxPreloader extends Preloader {
 
     @Override
     public void handleApplicationNotification(PreloaderNotification info) {
-        if (info instanceof SpringInitProgress) updateProgress((SpringInitProgress) info);
+        if (info instanceof FxSpringInitProgress) updateProgress((FxSpringInitProgress) info);
     }
 
-    protected void updateProgress(SpringInitProgress info) {
+    protected void updateProgress(FxSpringInitProgress info) {
 
     }
 }

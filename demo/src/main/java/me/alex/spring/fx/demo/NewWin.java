@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
+import javafx.stage.Stage;
 import me.alex.spring.fx.core.FxController;
 import me.alex.spring.fx.core.FxControllerSupport;
 import me.alex.spring.fx.core.FxUtils;
@@ -15,6 +16,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
+ * Second demo window.
+ * <p>
  * Created by Alex.Sun on 1/12/17.
  */
 @FxController("NewWindow")
@@ -36,6 +39,12 @@ public class NewWin extends FxControllerSupport implements Initializable {
     @FXML
     public void onCloseParent(ActionEvent actionEvent) {
         main.getStage().close();
+    }
+
+    @Override
+    protected void initStage(Stage stage) {
+        super.initStage(stage);
+        stage.getIcons().add(Res.LOGO);
     }
 
     @Override

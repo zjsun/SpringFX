@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import me.alex.spring.fx.core.FxController;
 import me.alex.spring.fx.core.FxControllerSupport;
@@ -18,6 +17,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
+ * Main demo window.
+ * <p>
  * Created by Alex.Sun on 1/11/17.
  */
 @FxController(main = true)
@@ -43,7 +44,7 @@ public class Main extends FxControllerSupport implements Initializable {
     protected void initStage(Stage stage) {
         super.initStage(stage);
         stage.setTitle(title);
-        stage.getIcons().add(new Image(getClass().getResource("/fxml/logo.png").toExternalForm()));
+        stage.getIcons().add(Res.LOGO);
     }
 
     @FXML
