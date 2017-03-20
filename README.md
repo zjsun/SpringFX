@@ -1,2 +1,2 @@
 # SpringFX
-Spring Boot / JavaFX integration
+JavaFX/Spring Boot integration
